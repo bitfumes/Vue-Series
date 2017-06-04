@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			<!-- First -->
+			<h1>{{ message }}</h1>		
+			<!-- Second -->
+			<h1 v-bind:class='className'>{{ message }}</h1>		
+			<!-- Third -->
+			<h2 v-if='show'>Third Element</h2>
+			<!-- Fourth -->
+			<ol v-show='visible'>
+				<li v-for='list in lists'>{{ list }}</li>
+			</ol>
+			<!-- Fifth -->
+			<ul>
+				<li v-for='list in lists1'>{{ list.social }}</li>
+			</ul>
+			<!-- Sixth -->
+			<input type="text" v-model='message' class="form-control">
+			<!-- Seventh -->
+			<button v-on:Click='enablelist'>Show Lists</button>
+
+		</div>
+	</div>
+	
+	<script>
+		new Vue ({
+			el : '#app',
+			data: {
+				message : 'This is Vue Series on Bitfumes',
+				className : 'alert alert-danger',
+				show : false,
+				lists : ['Sarthak','Ankur','Bitfumes','Facebook'],
+				lists1 : [
+						{name:'Sarthak'},
+						{name:'Ankur'},
+						{name:'Bitfumes'},
+						{social:'Facebook'}
+						],
+				visible: false
+			},
+			methods:{
+				enablelist : function(){
+					this.visible=true;
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>
