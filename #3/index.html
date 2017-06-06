@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="app">
+			<br>
+			<h4 :style="styleSection" :title='title'>Speed of Sound</h4>
+			<br>
+			<h3 :class="[isActive ? 'alert alert-success':'alert alert-danger' ]">Speed of Universe</h3>
+			<br>
+			<h3 :class="{'alert alert-success': isActive,'col-lg-6':isMin}">Speed of Light</h3>
+		</div>
+	</div>
+	
+	<script>
+		new Vue ({
+			el:'#app',
+			data:{
+				styleSection:{
+					color:'red',
+					border:'2px solid black'
+				},
+				title:'This is the best title in the world',
+				isActive:false,
+				isMin:true
+			}
+		});
+	</script>
+
+</body>
+</html>
